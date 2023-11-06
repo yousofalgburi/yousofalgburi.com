@@ -10,7 +10,7 @@ export default function Page() {
 
 			<div className='my-8'>
 				<div className='relative h-[25rem] mb-4'>
-					<Image alt='A picture of yousof algburi smiling' src='/me.jpg' fill sizes='(max-width: 768px) 213px, 33vw' priority className='rounded-lg object-cover' />
+					<Image alt='A picture of yousof algburi smiling' src='/me.JPG' fill sizes='(max-width: 768px) 213px, 33vw' priority className='rounded-lg object-cover' />
 				</div>
 			</div>
 		</section>
