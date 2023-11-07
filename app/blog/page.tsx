@@ -11,13 +11,14 @@ export default function BlogPage() {
 		<section>
 			<h1 className='font-semibold text-2xl mb-8 tracking-tighter'>read my blog</h1>
 
-			<h2 className='font-semibold text-lg mb-8 tracking-tighter'>(under construction)</h2>
+			<Link href='/blog/clean-code-summary' target='_blank' className='flex flex-col items-center rounded-lg shadow md:flex-row transition-all hover:bg-[#1f1d1d]'>
+				<img className='w-full rounded-lg object-fit md:h-auto md:w-48' src='/proj1.jpg' alt='' />
 
-			{/* <Link key='test' className='flex flex-col space-y-1 mb-4' href={'/blog/test'}>
-				<div className='w-full flex flex-col'>
-					<p className='text-neutral-900 dark:text-neutral-100 tracking-tight'>Test 1</p>
+				<div className='flex flex-col justify-between p-4 leading-normal'>
+					<h1 className='text-xl text-neutral-900 dark:text-neutral-100 tracking-tight'>Clean Code (Book): A Summary</h1>
+					<p className='prose prose-neutral dark:prose-invert'>Read my summary of the book Clean Code.</p>
 				</div>
-                </Link> */}
+			</Link>
 		</section>
 	)
 }
