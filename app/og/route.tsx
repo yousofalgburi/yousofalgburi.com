@@ -14,24 +14,19 @@ export async function GET(req: NextRequest) {
 					height: '100%',
 					width: '100%',
 					display: 'flex',
-					flexDirection: 'column',
-					alignItems: 'flex-start',
+					alignItems: 'center',
 					justifyContent: 'center',
 					backgroundImage: 'url(https://yousofalgburi.com/og-bg.png)',
 				}}
 			>
 				<div
 					style={{
-						marginLeft: 190,
-						marginRight: 190,
-						display: 'flex',
-						fontSize: 130,
-						fontFamily: 'system-ui',
-						letterSpacing: '-0.05em',
-						fontStyle: 'normal',
+						textAlign: 'center',
+						fontSize: 100,
+						fontFamily: 'Arial, sans-serif',
 						color: 'white',
-						lineHeight: '120px',
-						whiteSpace: 'pre-wrap',
+						lineHeight: '110px',
+						padding: '0 20px',
 					}}
 				>
 					{postTitle}
