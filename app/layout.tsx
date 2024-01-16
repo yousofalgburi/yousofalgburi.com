@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: 'Yousof Algburi',
 		description: 'Developer, entrepreneur, and a creative.',
-		url: 'https://yousofalgburi.io',
+		url: 'https://yousofalgburi.com',
 		siteName: 'Yousof Algburi',
 		locale: 'en_US',
 		type: 'website',
