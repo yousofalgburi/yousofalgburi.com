@@ -1,7 +1,599 @@
 ---
 title: 'Clean Code: A comprehensive book review'
-publishedAt: '2024-01-14'
+publishedAt: '2024-01-15'
 summary: 'In progress.'
 ---
 
-This is currently in progress... check back later!
+## Introduction to Clean Code
+
+In the world of software development, "Clean Code" by Robert C. Martin, popularly known as Uncle Bob, is a classic that many developers have read.
+The essence of clean code lies in its simplicity, clarity, and the ease with which others can understand and modify it.
+It’s not just about writing code that works, but about writing code that lives and evolves with grace.
+
+## What is Clean Code?
+
+Clean code is akin to a well-organized kitchen where everything is in its place, making cooking a breeze.
+It's not just about functionality; it's about elegance, efficiency, and readability. Here's how some programming maestros describe it:
+
+-   **Elegant**: Like a beautifully composed piece of music, elegant code is pleasing to read.
+-   **Efficient**: It does what it's supposed to do without wasting resources.
+-   **Readable & Straightforward**: Clean code should be as easy to read as a good book, with everything making sense and having a clear purpose
+
+### Examples of Clean Code
+
+-   **Elegance in Simplicity**: Consider a function that calculates the average of an array of numbers.
+    A clean implementation would be concise, use meaningful variable names, and avoid unnecessary complexity.
+
+```javascript
+function calculateAverage(numbers) {
+	const total = numbers.reduce((acc, number) => acc + number, 0)
+	return total / numbers.length
+}
+```
+
+-   **Efficiency with Clarity**: Writing an algorithm for sorting shouldn't just be about using the least resources; it should also be easy to understand.
+    A clean bubble sort, for example, not only performs the task but is also written in a way that another developer can quickly grasp what it's doing.
+
+### Why Clean Code Matters
+
+The impact of clean code extends far beyond individual productivity. It's about building robust, error-resistant software that can evolve over time.
+It’s about the collective understanding and maintainability of the codebase. Just as a well-organized kitchen allows multiple chefs to cook simultaneously
+without chaos, clean code enables teams of developers to work together efficiently.
+
+<Image
+	alt={`Two doors one showing what reviewing bad code is like and the other showing what reviewing clean code is like`}
+	src={`/images/clean-code/clean-code.png`}
+	width={1280}
+	height={720}
+/>
+
+### The Ripple Effect of Bad Code
+
+Once a codebase starts to accumulate "dirt", this tends to snowball. The rush to meet deadlines often leads to cutting corners, which results
+in more bugs, harder debugging, and a slower development pace. It's a classic case of "quick fixes" leading to long-term headaches.
+
+<Image
+	alt={`A pie showing 13.5 hours are spent on technical debt, and 3.8 hours on bad code out of 41.1 hours for developers`}
+	src={`/images/clean-code/average-dev-week.png`}
+	width={1280}
+	height={720}
+/>
+
+### Breaking the Cycle
+
+To avoid the endless loop of bad code, we need to instill a culture of writing clean code from the start. It's about taking that extra moment to refactor,
+name variables meaningfully, and structure our functions clearly. It’s about reviewing our peers' code with a focus on long-term maintainability.
+
+## A summary of each chapter
+
+### 2. Meaningful Names
+
+Naming in code is like signposting on a road, guiding the reader with clarity.
+Effective naming transforms code into a legible story, enhancing maintainability and professionalism.
+Embrace these practices for more intuitive and understandable code.
+
+1. **Intention-Revealing Names**: Clearly show purpose and use.
+
+    - 🚫 `int d; // elapsed time in days`
+    - ✅ `int elapsedTimeInDays;`
+
+2. **Avoid Disinformation**: Names should accurately represent their function.
+
+    - 🚫 `const AccountList = { /* ... */ }; // Not a list type`
+    - ✅ `const AccountGroup = { /* ... */ };`
+
+3. **Pronounceable & Searchable**: Easy to pronounce and find in the codebase.
+
+    - 🚫 `const cntrctId = 12345;`
+    - ✅ `const contractId = 12345;`
+
+4. **Class & Method Names**: Classes as nouns, methods as verbs.
+    - 🚫 `class ProcMan { runAll() { /* ... */ } chkVld() { /* ... */ } }`
+    - ✅ `class ProcessManager { runAllProcesses() { /* ... */ } checkValidity() { /* ... */ } }`
+
+### 3. Functions
+
+Functions in clean code should be small, focused, and clear in their intent. They should perform one task or answer a specific
+question, avoiding side effects and complexity. By adhering to these principles, your functions will become more readable,
+maintainable, and efficient. Embrace these practices for streamlined and understandable code.
+
+1. **Single Responsibility Principle (SRP)**:
+
+    - Functions should do one thing, do it well, and do it only.
+    - 🚫 Before:
+        ```javascript
+        function processOrder(order) {
+        	validateOrder(order)
+        	calculateOrderTotal(order)
+        	submitOrder(order)
+        	sendConfirmationEmail(order)
+        }
+        ```
+    - ✅ After:
+
+        ```javascript
+        function processOrder(order) {
+        	validateOrder(order)
+        	calculateOrderTotal(order)
+        	submitOrder(order)
+        }
+
+        function handleOrderConfirmation(order) {
+        	sendConfirmationEmail(order)
+        }
+        ```
+
+2. **Limit Arguments**:
+
+    - Minimize the number of arguments in a function, ideally less than three.
+    - 🚫 Before:
+        ```javascript
+        function createProfile(name, age, email, address) {
+        	/* ... */
+        }
+        ```
+    - ✅ After:
+        ```javascript
+        function createProfile(userDetails) {
+        	/* ... */
+        }
+        ```
+
+3. **Avoid Side Effects**:
+
+    - Functions should not produce unexpected changes to the program state.
+    - 🚫 Before:
+        ```javascript
+        function updateUser(user) {
+        	user.lastLogin = new Date() // Side effect
+        	// Additional logic...
+        }
+        ```
+    - ✅ After:
+
+        ```javascript
+        function updateUser(user) {
+        	// Non-modifying logic...
+        }
+        function updateLastLogin(user) {
+        	user.lastLogin = new Date() // Explicitly updating login time
+        }
+        ```
+
+4. **Command Query Separation**:
+
+    - Functions should either perform an action or return data, but not both.
+    - 🚫 Before:
+        ```javascript
+        function getUserAndValidate(user) {
+        	/* ... */
+        }
+        ```
+    - ✅ After:
+        ```javascript
+        function validateUser(user) {
+        	/* ... */
+        }
+        function getUser() {
+        	/* ... */
+        }
+        ```
+
+5. **Prefer Exceptions Over Error Codes**:
+
+    - Using exceptions helps keep error handling and main logic separate.
+    - 🚫 Before:
+        ```javascript
+        if (saveData(data) === ERROR_CODE) {
+        	/* ... */
+        }
+        ```
+    - ✅ After:
+        ```javascript
+        try {
+        	saveData(data)
+        } catch (error) {
+        	/* ... */
+        }
+        ```
+
+6. **DRY (Don't Repeat Yourself)**:
+    - Avoid code duplication to improve maintainability.
+    - 🚫 Before:
+        ```javascript
+        function calculateArea(width, height) {
+        	/* ... */
+        }
+        function calculatePerimeter(width, height) {
+        	/* ... */
+        }
+        ```
+    - ✅ After:
+        ```javascript
+        function calculateDimensions(width, height) {
+        	/* area and perimeter */
+        }
+        ```
+
+### 4. Comments
+
+### 🗨️ When to Use Comments
+
+1. **Comments as a Last Resort**: Aim for self-explanatory code. Refactor instead of relying on comments.
+
+    - 🚫 Before:
+        ```javascript
+        // Check if employee is eligible for benefits
+        if (employee.age > 65 && employee.hoursWorked > 40) {
+        	/* ... */
+        }
+        ```
+    - ✅ After:
+        ```javascript
+        if (employee.isEligibleForBenefits()) {
+        	/* ... */
+        }
+        ```
+
+2. **Appropriate Use of Comments**:
+
+    - **Legal Comments**: For copyrights and authorship.
+    - **Informative Comments**: To explain complex code like regex.
+    - **Clarification Comments**: For unusual but necessary code.
+    - **Warning Comments**: To highlight potential consequences.
+
+3. **TODO Comments**: Mark future improvements or completions.
+
+## 🚫 Types of Comments to Avoid
+
+1. **Redundant/Obvious Comments**: Don't restate what the code already says.
+
+    - 🚫 Example:
+        ```javascript
+        // Increments counter by one
+        counter += 1
+        ```
+
+2. **Commented-Out Code**: Rely on version control instead of commenting out old code.
+
+3. **Journal Comments**: Use version control for history, not comments.
+
+4. **Noise Comments**: Avoid comments that add no value.
+
+## 📚 Practical Example
+
+-   Eliminating Redundant Comments:
+
+    ```javascript
+    // 🚫 Bad: Redundant comment
+    // The day of the month
+    private int dayOfMonth;
+    // ✅ Good: Code speaks for itself
+    private int dayOfMonth;
+    // ✅ Good: Clarifies complex regex pattern
+    // Matches dates in format dd.mm.yyyy (1900-2099)
+    let dateRegex = new RegExp("^(19|20)\\d\\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$");
+    ```
+
+### 5. Formatting
+
+Chapter 5 of "Clean Code" focuses on the importance of formatting in code.
+
+## 📄 The Newspaper Metaphor
+
+Code should be organized like a well-written newspaper article:
+
+-   **High-Level Summary at the Start**: High-level concepts and algorithms at the top.
+-   **Detailed Implementations Below**: Lower-level functions and details toward the bottom.
+
+## 📏 Vertical Formatting
+
+-   **File Length**: Ideal file size is 100-200 lines.
+-   **Logical Separation**: Use blank lines to separate different concepts.
+-   **Local Variables**: Declare them close to their usage.
+-   **Related Functions**: Place functions that call each other vertically close.
+-   **Conceptual Affinity**: Group related concepts together, like `read` and `write`.
+-   **Function Call Dependencies**: Higher-level functions should be above lower-level functions they call.
+
+## ↔️ Horizontal Formatting
+
+-   **Line Length**: Aim for a maximum of 120 characters per line.
+-   **White Space Usage**: Use it to associate related things and disassociate weaker relationships.
+-   **Operator Spacing**: Use space around operators to highlight precedence.
+-   **Parameter Lists**: Space between parameters but not between function names and parameters.
+
+## ⛔ Don't Use Horizontal Alignment
+
+-   **Avoid Columnar Alignment**: It emphasizes the wrong things and can distract from the actual logic.
+
+## 📐 Indentation
+
+-   **Hierarchy Visualization**: Indentation helps in visualizing the file's hierarchy.
+-   **Consistent Hierarchy**: Maintain consistent indentation even for one-liners.
+
+## 🌀 Team Rules
+
+-   **Adhere to Team Conventions**: Consistency within a team's codebase is crucial.
+
+## ✨ Example
+
+-   Formatting for Readability:
+
+    ```javascript
+    // Poorly formatted
+    function calculate(x, y) {
+    	let result = x + y
+    	return result
+    }
+    // Well formatted
+    function calculate(x, y) {
+    	let result = x + y
+    	return result
+    }
+    ```
+
+### 6. Objects and Data Structures
+
+Effective management of data and objects is crucial. Favor encapsulation over exposure,
+and simplicity over complexity. This approach results in cleaner, more modular, and easier-to-maintain code.
+
+1. **Data Abstraction**: Hide details, expose essentials.
+
+    - ```javascript
+      🚫 class Point { public double x; public double y; }
+      ✅ class Point { private getX(); private getY(); }
+      ```
+
+2. **Data/Object Anti-Symmetry**: Data exposes, objects conceal.
+
+    - ```javascript
+      🚫 class Rectangle { public width; public height; }
+      ✅ class Shape { private calculateArea(); }
+      ```
+
+3. **Law of Demeter**: Minimize object interactions.
+
+    - ```javascript
+      🚫 a.getB().getC().doSomething();
+      ✅ a.performAction();
+      ```
+
+4. **Data Transfer Objects (DTOs)**: Simple structures for communication.
+    - ```javascript
+      class BookDTO { public String title; public String author; }
+      ```
+
+### 7. Error Handling
+
+Effective error handling in code is vital. It should clarify, not complicate the logic. Use exceptions
+judiciously, provide useful context, and avoid pitfalls like returning null to ensure cleaner, more robust code.
+
+1. **Use Exceptions Over Error Codes**: Exceptions keep code clean; error codes can obscure logic.
+
+    - ```javascript
+      🚫 if (errorCode) { /* ... */ }
+      ✅ try { /* ... */ } catch (Exception e) { /* ... */ }
+      ```
+
+2. **Try-Catch-Finally Structure**: Handle exceptions and ensure cleanup.
+
+    - ```javascript
+      try { /* Open resources */ }
+      catch (Exception e) { /* Handle error */ }
+      finally { /* Clean up resources */ }
+      ```
+
+3. **Provide Context in Exceptions**: Enhance clarity with meaningful exception messages.
+
+    - ```javascript
+      throw new Error('Failed to load configuration file.')
+      ```
+
+4. **Avoid Returning Null**: Prevents null reference errors.
+
+    - ```javascript
+      🚫 return null;
+      ✅ return defaultValue; // Or throw an exception
+      ```
+
+5. **Custom Exception Classes**: Tailor exceptions to caller's needs.
+    - ```javascript
+      class UserNotFoundException extends Exception {
+      	/* ... */
+      }
+      ```
+
+### 8. Boundaries
+
+Managing boundaries in software involves carefully integrating and testing third-party or external code.
+By abstracting these interactions and preparing for future changes, we maintain cleaner and more robust systems.
+
+1. **Third-Party Code Abstraction**: Control access to properties and methods.
+
+    - ```javascript
+      🚫 direct use of third-party code;
+      ✅ create an abstraction layer/interface.
+      ```
+
+2. **Testing Third-Party Code**: Ensure understanding and future compatibility.
+
+    - ```javascript
+      write tests for external library functions used in your application.
+      ```
+
+3. **Mock Interfaces for Undefined Code**: Develop against an interface you wish you had.
+    - ```javascript
+      create a mock class to simulate the desired interface.
+      ```
+
+### 9. Unit Tests
+
+Unit tests are fundamental in software development. They should be clean, well-structured,
+and adhere to principles that ensure their effectiveness and maintainability. This approach leads to
+more robust, reliable, and easily adaptable software.
+
+1. **Clean Tests**: As vital as production code, should evolve with it.
+
+    - ```javascript
+      maintain test code rigorously, similar to production code.
+      ```
+
+2. **BUILD-OPERATE-CHECK Pattern**: Structure for clarity and efficiency.
+
+    - ```javascript
+      organize tests into setup (build), invocation (operate), and assertion (check).
+      ```
+
+3. **Minimize Asserts per Test**: Focus on testing a single concept.
+
+    - ```javascript
+      one assert per test, to isolate test cases.
+      ```
+
+4. **F.I.R.S.T Principles**: Fast, Independent, Repeatable, Self-Validating, Timely.
+    - ```javascript
+      ensure tests are quick, can run independently, work in any environment, and provide clear pass/fail results.
+      ```
+
+### 10. Classes
+
+Classes are foundational in object-oriented programming. Adhering to SOLID principles and organizing classes properly leads to cleaner, more maintainable, and scalable code.
+
+1. **SOLID Principles**: Guidelines for OO design.
+
+    - **S**ingle Responsibility: One reason to change.
+    - **O**pen-Closed: Open for extension, closed for modification.
+    - **L**iskov Substitution: Subtypes must be substitutable for their base types.
+    - **I**nterface Segregation: Many client-specific interfaces are better than one general-purpose interface.
+    - **D**ependency Inversion: Depend on abstractions, not concretions.
+
+2. **Class Organization**: Proper structuring for readability and maintainability.
+    - Public static constants first, then private static variables, followed by private instance variables.
+
+### 11. Systems
+
+Effective system design, such as using dependency injection, simplifies complexity management, improving maintainability and scalability of software systems.
+
+1. **Separation of Construction and Use**: Differentiate system startup from runtime logic.
+2. **Dependency Injection**: Enhances flexibility and testability, reduces hard-coded dependencies.
+3. **Scaling Up**: Manage complexity by dividing systems into specific domains or responsibilities.
+
+## Practical Example: Dependency Injection in JavaScript
+
+```javascript
+// main.js
+// 🚫 Hard-coded dependency
+import Game from './Game.js'
+const game = new Game()
+// Game.js
+import DictionaryManager from './DictionaryManager.js'
+class Game {
+	constructor() {
+		this.dictionaryManager = new DictionaryManager()
+	}
+}
+
+// ✅ With dependency injection
+import Game from './Game.js'
+import DictionaryManager from './DictionaryManager.js'
+const dictionaryManager = new DictionaryManager()
+const game = new Game(dictionaryManager)
+// Game.js
+class Game {
+	constructor(dictionaryManager) {
+		this.dictionaryManager = dictionaryManager
+	}
+}
+```
+
+### 12. Emergence
+
+Emergent design, guided by these principles, fosters a clean, understandable, and maintainable codebase.
+It emphasizes the significance of testing in achieving a well-structured and efficient system.
+
+1. **Runs All the Tests**: Ensures the system is testable and verifiable.
+2. **No Duplication**: Eliminate redundancy for simpler, more maintainable code.
+3. **Expresses Intent**: Code should clearly convey its purpose.
+4. **Minimal Classes and Methods**: Avoid unnecessary complexity; be pragmatic.
+
+### Importance of Testing
+
+-   Testing leads to designs with low coupling and high cohesion.
+-   Testable code usually adheres to the Single Responsibility Principle.
+-   A clean and organized codebase is a testable one.
+-   Testing supports refactoring and maintains code integrity.
+
+### 13. Concurrency
+
+Concurrency is challenging but crucial for performance and structure. It requires careful planning, testing, and adherence to principles like limited data scope and single responsibility.
+
+-   **Decoupling Execution from Timing**: Allows operations without functional order dependency.
+-   **Concurrency vs. Single-threaded**: Multi-threading improves structure and performance but is complex.
+-   **Key Techniques**:
+    -   **Limit Scope of Data**: Use `synchronized` in Java for critical sections.
+    -   **Use Copies of Data**: Minimize shared data to avoid conflicts.
+    -   **Independent Threads**: Threads should not share data; each operates independently.
+
+## Best Practices in Concurrency
+
+1. **Follow Single Responsibility Principle**: Keep concurrency-related code separate and focused.
+2. **Know Your Library**: Understand thread-safe collections, executor framework, and nonblocking solutions.
+3. **Avoid Dependencies Between Synchronized Methods**: Prevents subtle bugs in concurrent code.
+4. **Keep Synchronized Sections Small**: Lock only what's necessary and avoid nested locks.
+5. **Graceful Shutdown**: Plan and test for proper shutdown to avoid deadlocks.
+
+## Testing Threaded Code
+
+-   **Frequent Testing**: Test under different configurations and loads.
+-   **Spurious Failures**: Treat them as potential threading issues.
+-   **Separate Nonthreaded Bugs**: Ensure code works outside of threads before tackling threading issues.
+
+### 14. Successive Refinement
+
+Successive refinement is about maintaining code quality through continuous, incremental improvements. This approach ensures the longevity and maintainability of software.
+
+-   **Avoiding Code Rot**: Continuous improvement prevents code degradation.
+-   **Cost of Cleaning Bad Code**: It’s easier and less expensive to maintain cleanliness than to clean up a mess.
+-   **Refactoring**: Regularly refining and improving code quality.
+
+## Case Study: Command-Line Argument Parser (`Args`)
+
+-   **Initial Development**: `Args` began as a simple tool but faced scalability issues.
+-   **Refinement Process**: The module was refactored and cleaned for better functionality.
+
+## Key Takeaways
+
+1. **Continuous Improvement**: Keep code clean from the start; frequent small refinements are more manageable.
+2. **Addressing Problems Promptly**: Clean up messes as soon as they're made to avoid complex dependencies and rot.
+3. **Professional Responsibility**: Maintaining clean code is a crucial aspect of professional software development.
+
+### 15. JUnit Internals
+
+Understanding the internals of JUnit, a popular Java testing framework.
+
+    -   JUnit exemplifies a simple, precise, and elegant framework.
+    -   Essential for creating effective unit tests in Java.
+    -   Encourages writing clean, maintainable, and testable code.
+
+## 16. Refactoring SerialDate
+
+Refactoring an existing code base to improve its structure and readability.
+
+    -   Demonstrates practical refactoring techniques.
+    -   Emphasizes the importance of clean code in maintaining and extending existing code.
+    -   Shows how to transform a complex code base into a more manageable and understandable format.
+
+## 17. Smells and Heuristics
+
+Identifying 'code smells' and applying heuristics for cleaner code.
+
+    -   Provides guidelines to recognize when code needs to be refactored.
+    -   Discusses common pitfalls in coding and how to avoid them.
+    -   Offers practical advice for improving code quality and maintainability.
+
+## Conclusion
+
+"Clean Code" is more than a book; it's a philosophy. It's about taking pride in craftsmanship, with a
+relentless focus on creating code that is elegant, efficient, and understandable. As Uncle Bob puts it, there is
+no excuse for not doing your best. Embrace these principles, and you'll not only become a better programmer but also contribute
+to a more efficient, enjoyable, and sustainable software development environment.
