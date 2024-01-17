@@ -2,7 +2,6 @@ const nextConfig = {
 	experimental: {
 		ppr: true,
 		useLightningcss: true,
-        mdxRs: true,
 	},
 	async redirects() {
 		return []
