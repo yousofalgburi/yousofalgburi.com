@@ -50,6 +50,7 @@ export default function Page() {
 
 			<div className='my-8 flex flex-col space-y-4 w-full'>
 				<BlogLink name='Clean Code: A comprehensive book review' slug='clean-code-review' />
+				<BlogLink name='How to effectively use LeetCode' slug='how-to-effectively-use-leetcode' />
 			</div>
 
 			<ul className='flex flex-col md:flex-row mt-8 space-x-0 md:space-x-4 space-y-2 md:space-y-0 font-sm text-neutral-600 dark:text-neutral-300'>

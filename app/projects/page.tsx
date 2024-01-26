@@ -8,7 +8,7 @@ export const metadata = {
 export default function BlogPage() {
 	return (
 		<section>
-			<h1 className='font-medium text-2xl mb-8 tracking-tighter'>checkout my projects</h1>
+			<h1 className='font-medium text-2xl mb-8 tracking-tighter'>Checkout my projects</h1>
 		</section>
 	)
 }
