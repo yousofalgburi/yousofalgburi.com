@@ -8,7 +8,7 @@ export const metadata = {
 export default function BlogPage() {
 	return (
 		<section>
-			<h1 className='font-medium text-2xl mb-8 tracking-tighter'>Checkout my projects</h1>
+			<h1 className='font-medium text-2xl mb-8 tracking-tighter'>Check out my projects</h1>
 
 			<h3 className='text-lg tracking-tighter'>
 				<Link href='https://games-link.vercel.app/'>GamesLink</Link>
