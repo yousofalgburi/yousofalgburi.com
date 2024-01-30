@@ -70,19 +70,6 @@ export default function WorkPage() {
 					a similar increase in user engagement and the implementation of complex features like state
 					management and routing.
 				</p>
-
-				<hr className='my-6 border-neutral-100 dark:border-neutral-800' />
-
-				<h2 className='font-medium text-xl mb-1 tracking-tighter'>Self Employed / Freelancer</h2>
-				<p className='text-neutral-600 dark:text-neutral-400 text-sm'>
-					Full Stack Developer, May 2023 — Present
-				</p>
-
-				<p>
-					Develop websites for clients using vanilla JavaScript/jQuery/Vue.js/React.js integrating into
-					shopify’s API. Implemented custom solutions like product customization, image management and mobile
-					friendly design. Examples: chromacards.com, myhousenumber.com.
-				</p>
 			</div>
 		</section>
 	)
