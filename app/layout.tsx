@@ -14,10 +14,10 @@ export const metadata: Metadata = {
 		default: 'Yousof Algburi',
 		template: '%s | Yousof Algburi',
 	},
-	description: 'Developer, entrepreneur, and a creative.',
+	description: 'Developer and a creative.',
 	openGraph: {
 		title: 'Yousof Algburi',
-		description: 'Developer, entrepreneur, and a creative.',
+		description: 'Developer and a creative.',
 		url: 'https://yousofalgburi.com',
 		siteName: 'Yousof Algburi',
 		locale: 'en_US',

@@ -5,6 +5,8 @@ import { TweetComponent } from './tweet'
 import { highlight } from 'sugar-high'
 import React from 'react'
 import { LiveCode } from './sandpack'
+import { Suspense } from 'react'
+import { Loader2 } from 'lucide-react'
 
 function Table({ data }) {
 	let headers = data.headers.map((header, index) => <th key={index}>{header}</th>)
@@ -164,5 +166,9 @@ let components = {
 }
 
 export function CustomMDX(props) {
-	return <MDXRemote {...props} components={{ ...components, ...(props.components || {}) }} />
+	return (
+		<Suspense fallback={<Loader2 className='animate-spin' />}>
+			<MDXRemote {...props} components={{ ...components, ...(props.components || {}) }} />
+		</Suspense>
+	)
 }

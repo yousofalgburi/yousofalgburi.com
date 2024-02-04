@@ -1,6 +1,3 @@
-import Image from 'next/image'
-import avatar from 'app/avatar.jpg'
-
 function ArrowIcon() {
 	return (
 		<svg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -36,9 +33,9 @@ export default function Page() {
 			<h1 className='font-medium text-2xl mb-8 tracking-tighter'>Hello, I'm Yousof.</h1>
 
 			<p className='prose prose-neutral dark:prose-invert'>
-				A full stack developer, entrepreneur, and creative. I currently work as a full stack developer at Call
-				Box where I build exciting projects for the web. I'm also a freelancer and consultant, helping
-				businesses with great software. I also build and sell apps from scratch, currently building GamesLink.
+				A full stack developer and creative. I currently work as a full stack developer at Call Box where I
+				build exciting projects for the web. I'm also a freelancer and consultant, helping businesses with great
+				software. I also build and sell apps from scratch, currently building GamesLink.
 			</p>
 
 			<div className='prose prose-neutral dark:prose-invert'>

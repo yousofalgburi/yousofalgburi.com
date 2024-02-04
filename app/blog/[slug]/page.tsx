@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
-import { Suspense } from 'react'
 import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/mdx'
 import { getBlogPosts } from 'app/db/blog'
 import { unstable_noStore as noStore } from 'next/cache'
+import { Suspense } from 'react'
 
 export async function generateMetadata({ params }): Promise<Metadata | undefined> {
 	let post = getBlogPosts().find((post) => post.slug === params.slug)
