@@ -6,8 +6,7 @@ summary: 'A comprehensive book summary of Clean Code by Robert C. Martin, popula
 
 ## Introduction to Clean Code
 
-In the world of software development, "Clean Code" by Robert C. Martin, popularly known as Uncle Bob, is
-a classic that many developers have read. It's the practise of writing code that performs the given task at hand in a performant way but also be easy to read, understand, and maintaen. The value of clean code initially can sometimes not be clear. It becomes more clear over time in the maintenance phase and especially when many people are involved in the project.
+In the world of software development, "Clean Code" by Robert C. Martin, popularly known as Uncle Bob, is a classic that many developers have read. It's the practice of writing code that performs the given task at hand in a performant way but also be easy to read, understand, and maintain. The value of clean code initially can sometimes not be clear. It becomes more clear over time in the maintenance phase and especially when many people are involved in the project.
 
 ## What is Clean Code?
 
@@ -226,7 +225,7 @@ streamlined and understandable code.
 
 ### 4. Comments
 
-### 🗨️ When to Use Comments
+### When to Use Comments
 
 1. **Comments as a Last Resort**: Aim for self-explanatory code. Refactor instead of relying on comments.
 
@@ -253,7 +252,7 @@ streamlined and understandable code.
 
 3. **TODO Comments**: Mark future improvements or completions.
 
-## 🚫 Types of Comments to Avoid
+## Types of Comments to Avoid
 
 1. **Redundant/Obvious Comments**: Don't restate what the code already says.
 
@@ -269,7 +268,7 @@ streamlined and understandable code.
 
 4. **Noise Comments**: Avoid comments that add no value.
 
-## 📚 Practical Example
+## Practical Example
 
 -   Eliminating Redundant Comments:
 
@@ -288,14 +287,14 @@ streamlined and understandable code.
 
 Chapter 5 of "Clean Code" focuses on the importance of formatting in code.
 
-## 📄 The Newspaper Metaphor
+## The Newspaper Metaphor
 
 Code should be organized like a well-written newspaper article:
 
 -   **High-Level Summary at the Start**: High-level concepts and algorithms at the top.
 -   **Detailed Implementations Below**: Lower-level functions and details toward the bottom.
 
-## 📏 Vertical Formatting
+## Vertical Formatting
 
 -   **File Length**: Ideal file size is 100-200 lines.
 -   **Logical Separation**: Use blank lines to separate different concepts.
@@ -305,35 +304,35 @@ Code should be organized like a well-written newspaper article:
 -   **Function Call Dependencies**: Higher-level functions should be above lower-level functions they
     call.
 
-## ↔️ Horizontal Formatting
+## Horizontal Formatting
 
 -   **Line Length**: Aim for a maximum of 120 characters per line.
 -   **White Space Usage**: Use it to associate related things and disassociate weaker relationships.
 -   **Operator Spacing**: Use space around operators to highlight precedence.
 -   **Parameter Lists**: Space between parameters but not between function names and parameters.
 
-## ⛔ Don't Use Horizontal Alignment
+## Don't Use Horizontal Alignment
 
 -   **Avoid Columnar Alignment**: It emphasizes the wrong things and can distract from the actual logic.
 
-## 📐 Indentation
+## Indentation
 
 -   **Hierarchy Visualization**: Indentation helps in visualizing the file's hierarchy.
 -   **Consistent Hierarchy**: Maintain consistent indentation even for one-liners.
 
-## 🌀 Team Rules
+## Team Rules
 
 -   **Adhere to Team Conventions**: Consistency within a team's codebase is crucial.
 
-## ✨ Example
+## Example
 
 -   Formatting for Readability:
 
     ```javascript
     // Poorly formatted
     function calculate(x, y) {
-    	let result = x + y
-    	return result
+    	// letresult=x+y
+    	// return result
     }
     // Well formatted
     function calculate(x, y) {
