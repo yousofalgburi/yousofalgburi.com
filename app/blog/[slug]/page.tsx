@@ -1,8 +1,8 @@
-import type { Metadata } from 'next'
-import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/mdx'
 import { getBlogPosts } from 'app/db/blog'
+import type { Metadata } from 'next'
 import { unstable_noStore as noStore } from 'next/cache'
+import { notFound } from 'next/navigation'
 import { Suspense } from 'react'
 
 export async function generateMetadata({ params }): Promise<Metadata | undefined> {
@@ -79,7 +79,7 @@ export default function Blog({ params }) {
 	}
 
 	return (
-		<section>
+		<section className='pb-20'>
 			<script
 				type='application/ld+json'
 				suppressHydrationWarning
