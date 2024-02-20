@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export const metadata = {
 	title: 'Projects',
-	description: "Check out projects I'v build or I'm currently working on.",
+	description: "Check out projects I have built or I'm currently working on.",
 }
 
 export default function BlogPage() {

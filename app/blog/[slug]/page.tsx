@@ -3,7 +3,6 @@ import { getBlogPosts } from 'app/db/blog'
 import type { Metadata } from 'next'
 import { unstable_noStore as noStore } from 'next/cache'
 import { notFound } from 'next/navigation'
-import { Suspense } from 'react'
 
 export async function generateMetadata({ params }): Promise<Metadata | undefined> {
 	let post = getBlogPosts().find((post) => post.slug === params.slug)
@@ -104,11 +103,9 @@ export default function Blog({ params }) {
 			/>
 			<h1 className='title font-medium text-2xl tracking-tighter max-w-[650px]'>{post.metadata.title}</h1>
 			<div className='flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]'>
-				<Suspense fallback={<p className='h-5' />}>
-					<p className='text-sm text-neutral-600 dark:text-neutral-400'>
-						{formatDate(post.metadata.publishedAt)}
-					</p>
-				</Suspense>
+				<p className='text-sm text-neutral-600 dark:text-neutral-400'>
+					{formatDate(post.metadata.publishedAt)}
+				</p>
 			</div>
 			<article className='prose prose-quoteless prose-neutral dark:prose-invert'>
 				<CustomMDX source={post.content} />

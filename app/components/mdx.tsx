@@ -1,12 +1,10 @@
-import Link from 'next/link'
-import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import { TweetComponent } from './tweet'
-import { highlight } from 'sugar-high'
+import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
+import { highlight } from 'sugar-high'
 import { LiveCode } from './sandpack'
-import { Suspense } from 'react'
-import { Loader2 } from 'lucide-react'
+import { TweetComponent } from './tweet'
 
 function Table({ data }) {
 	let headers = data.headers.map((header, index) => <th key={index}>{header}</th>)
@@ -166,9 +164,5 @@ let components = {
 }
 
 export function CustomMDX(props) {
-	return (
-		<Suspense fallback={<Loader2 className='animate-spin' />}>
-			<MDXRemote {...props} components={{ ...components, ...(props.components || {}) }} />
-		</Suspense>
-	)
+	return <MDXRemote {...props} components={{ ...components, ...(props.components || {}) }} />
 }

@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import { getBlogPosts } from 'app/db/blog'
+import Link from 'next/link'
 
 export const metadata = {
 	title: 'Blog',

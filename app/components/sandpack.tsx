@@ -1,8 +1,8 @@
 'use client'
 
 import { Sandpack } from '@codesandbox/sandpack-react'
-import { HTML, CSS, Tailwind, stylexIndex, stylexApp, stylexViteConfig, stylexTokens } from './sandpack-files'
 import React, { Suspense } from 'react'
+import { CSS, HTML, Tailwind, stylexApp, stylexIndex, stylexTokens, stylexViteConfig } from './sandpack-files'
 
 class ErrorBoundary extends React.Component<
 	{ fallback: React.ReactNode; children?: React.ReactNode },
