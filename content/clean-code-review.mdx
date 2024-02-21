@@ -6,24 +6,23 @@ summary: 'A comprehensive book summary of Clean Code by Robert C. Martin, popula
 
 ## Introduction to Clean Code
 
-In the world of software development, "Clean Code" by Robert C. Martin, popularly known as Uncle Bob, is a classic that many developers have read. It's the practice of writing code that performs the given task at hand in a performant way but also be easy to read, understand, and maintain. The value of clean code initially can sometimes not be clear. It becomes more clear over time in the maintenance phase and especially when many people are involved in the project.
+In the world of software development, "Clean Code" by Robert C. Martin, popularly known as Uncle Bob, is a classic that many developers have read. It's the
+practice of writing code that performs the given task at hand in a performant way but also be easy to read, understand, and maintain. The value of clean code
+initially can sometimes not be clear. It becomes more clear over time in the maintenance phase and especially when many people are involved in the project.
 
 ## What is Clean Code?
 
-Clean code is akin to a well-organized kitchen where everything is in its place, making cooking a breeze.
-It's not just about functionality; it's about elegance, efficiency, and readability. Here's how some
-programming maestros describe it:
+Clean code is similar to a well-organized kitchen where everything is in its place, making cooking a breeze. It's not just about functionality; it's about
+elegance, efficiency, and readability. Here's how some programming maestros describe it:
 
 -   **Elegant**: Like a beautifully composed piece of music, elegant code is pleasing to read.
 -   **Efficient**: It does what it's supposed to do without wasting resources.
--   **Readable & Straightforward**: Clean code should be as easy to read as a good book, with everything
-    making sense and having a clear purpose
+-   **Readable & Straightforward**: Clean code should be as easy to read as a good book, with everything making sense and having a clear purpose.
 
 ### Examples of Clean Code
 
--   **Elegance in Simplicity**: Consider a function that calculates the average of an array of numbers. A
-    clean implementation would be concise, use meaningful variable names, and avoid unnecessary
-    complexity.
+-   **Elegance in Simplicity**: Consider a function that calculates the average of an array of numbers. A clean implementation would be concise, use meaningful
+    variable names, and avoid unnecessary complexity.
 
 ```javascript
 function calculateAverage(numbers) {
@@ -32,20 +31,17 @@ function calculateAverage(numbers) {
 }
 ```
 
--   **Efficiency with Clarity**: Writing an algorithm for sorting shouldn't just be about using the least
-    resources; it should also be easy to understand. A clean bubble sort, for example, not only performs
-    the task but is also written in a way that another developer can quickly grasp what it's doing.
+-   **Efficiency with Clarity**: Writing an algorithm for sorting shouldn't just be about using the least resources; it should also be easy to understand. A
+    clean bubble sort, for example, not only performs the task but is also written in a way that another developer can quickly grasp what it's doing.
 
 ### Why Clean Code Matters
 
-The impact of clean code extends far beyond individual productivity. It's about building robust,
-error-resistant software that can evolve over time. It’s about the collective understanding and
-maintainability of the codebase. Just as a well-organized kitchen allows multiple chefs to cook
-simultaneously without chaos, clean code enables teams of developers to work together efficiently.
+The impact of clean code extends far beyond individual productivity. It's about building robust, error-resistant software that can evolve over time. It’s about
+the collective understanding and maintainability of the codebase. Just as a well-organized kitchen allows multiple chefs to cook simultaneously without chaos,
+clean code enables teams of developers to work together efficiently.
 
 <Image
-	alt={`Two doors one showing what reviewing bad code is like and the other showing what reviewing
-	clean code is like`}
+	alt={`Two doors one showing what reviewing bad code is like and the other showing what reviewing clean code is like`}
 	src={`/images/clean-code/clean-code.png`}
 	width={1280}
 	height={720}
@@ -53,13 +49,11 @@ simultaneously without chaos, clean code enables teams of developers to work tog
 
 ### The Ripple Effect of Bad Code
 
-Once a codebase starts to accumulate "dirt", this tends to snowball. The rush to meet deadlines often
-leads to cutting corners, which results in more bugs, harder debugging, and a slower development pace.
-It's a classic case of "quick fixes" leading to long-term headaches.
+Once a codebase starts to accumulate "dirt", this tends to snowball. The rush to meet deadlines often leads to cutting corners, which results in more bugs,
+harder debugging, and a slower development pace. It's a classic case of "quick fixes" leading to long-term headaches.
 
 <Image
-	alt={`A pie showing 13.5 hours are spent on technical debt, and 3.8 hours on bad code out of 41.1
-	hours for developers`}
+	alt={`A pie showing 13.5 hours are spent on technical debt, and 3.8 hours on bad code out of 41.1 hours for developers`}
 	src={`/images/clean-code/average-dev-week.png`}
 	width={1280}
 	height={720}
@@ -67,17 +61,15 @@ It's a classic case of "quick fixes" leading to long-term headaches.
 
 ### Breaking the Cycle
 
-To avoid the endless loop of bad code, we need to instill a culture of writing clean code from the start.
-It's about taking that extra moment to refactor, name variables meaningfully, and structure our functions
-clearly. It’s about reviewing our peers' code with a focus on long-term maintainability.
+To avoid the endless loop of bad code, we need to instill a culture of writing clean code from the start. It's about taking that extra moment to refactor, name
+variables meaningfully, and structure our functions clearly. It’s about reviewing our peers' code with a focus on long-term maintainability.
 
 ## A summary of each chapter
 
 ### 2. Meaningful Names
 
-Naming in code is like signposting on a road, guiding the reader with clarity. Effective naming
-transforms code into a legible story, enhancing maintainability and professionalism. Embrace these
-practices for more intuitive and understandable code.
+Naming in code is like signposting on a road, guiding the reader with clarity. Effective naming transforms code into a legible story, enhancing maintainability
+and professionalism. Embrace these practices for more intuitive and understandable code.
 
 1. **Intention-Revealing Names**: Clearly show purpose and use.
 
@@ -100,10 +92,12 @@ practices for more intuitive and understandable code.
 
 ### 3. Functions
 
-Functions in clean code should be small, focused, and clear in their intent. They should perform one task
-or answer a specific question, avoiding side effects and complexity. By adhering to these principles,
-your functions will become more readable, maintainable, and efficient. Embrace these practices for
-streamlined and understandable code.
+Functions in clean code should be small, focused, and clear in their intent. They should perform one task or answer a specific question, avoiding side effects
+and complexity. By adhering to these principles, your functions will become more readable, maintainable, and efficient. Embrace these practices for streamlined
+and understandable code.
+
+However, keep in mind that this is a guiding principle that should be implemented when possible. Sometimes it's better to have
+side effects and that's okay. The goal is to have a clean codebase, not to follow the principles blindly.
 
 1. **Single Responsibility Principle (SRP)**:
 
@@ -276,8 +270,10 @@ streamlined and understandable code.
     // 🚫 Bad: Redundant comment
     // The day of the month
     private int dayOfMonth;
+
     // ✅ Good: Code speaks for itself
     private int dayOfMonth;
+
     // ✅ Good: Clarifies complex regex pattern
     // Matches dates in format dd.mm.yyyy (1900-2099)
     let dateRegex = new RegExp("^(19|20)\\d\\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$");
@@ -287,44 +283,43 @@ streamlined and understandable code.
 
 Chapter 5 of "Clean Code" focuses on the importance of formatting in code.
 
-## The Newspaper Metaphor
+### The Newspaper Metaphor
 
 Code should be organized like a well-written newspaper article:
 
 -   **High-Level Summary at the Start**: High-level concepts and algorithms at the top.
 -   **Detailed Implementations Below**: Lower-level functions and details toward the bottom.
 
-## Vertical Formatting
+### Vertical Formatting
 
 -   **File Length**: Ideal file size is 100-200 lines.
 -   **Logical Separation**: Use blank lines to separate different concepts.
 -   **Local Variables**: Declare them close to their usage.
 -   **Related Functions**: Place functions that call each other vertically close.
 -   **Conceptual Affinity**: Group related concepts together, like `read` and `write`.
--   **Function Call Dependencies**: Higher-level functions should be above lower-level functions they
-    call.
+-   **Function Call Dependencies**: Higher-level functions should be above lower-level functions they call.
 
-## Horizontal Formatting
+### Horizontal Formatting
 
 -   **Line Length**: Aim for a maximum of 120 characters per line.
 -   **White Space Usage**: Use it to associate related things and disassociate weaker relationships.
 -   **Operator Spacing**: Use space around operators to highlight precedence.
 -   **Parameter Lists**: Space between parameters but not between function names and parameters.
 
-## Don't Use Horizontal Alignment
+### Don't Use Horizontal Alignment
 
 -   **Avoid Columnar Alignment**: It emphasizes the wrong things and can distract from the actual logic.
 
-## Indentation
+### Indentation
 
 -   **Hierarchy Visualization**: Indentation helps in visualizing the file's hierarchy.
 -   **Consistent Hierarchy**: Maintain consistent indentation even for one-liners.
 
-## Team Rules
+### Team Rules
 
 -   **Adhere to Team Conventions**: Consistency within a team's codebase is crucial.
 
-## Example
+### Example
 
 -   Formatting for Readability:
 
@@ -334,6 +329,7 @@ Code should be organized like a well-written newspaper article:
     	// letresult=x+y
     	// return result
     }
+
     // Well formatted
     function calculate(x, y) {
     	let result = x + y
@@ -343,8 +339,8 @@ Code should be organized like a well-written newspaper article:
 
 ### 6. Objects and Data Structures
 
-Effective management of data and objects is crucial. Favor encapsulation over exposure, and simplicity
-over complexity. This approach results in cleaner, more modular, and easier-to-maintain code.
+Effective management of data and objects is crucial. Favor encapsulation over exposure, and simplicity over complexity. This approach results in cleaner, more
+modular, and easier-to-maintain code.
 
 1. **Data Abstraction**: Hide details, expose essentials.
 
@@ -374,9 +370,8 @@ over complexity. This approach results in cleaner, more modular, and easier-to-m
 
 ### 7. Error Handling
 
-Effective error handling in code is vital. It should clarify, not complicate the logic. Use exceptions
-judiciously, provide useful context, and avoid pitfalls like returning null to ensure cleaner, more
-robust code.
+Effective error handling in code is vital. It should clarify, not complicate the logic. Use exceptions judiciously, provide useful context, and avoid pitfalls
+like returning null to ensure cleaner, more robust code.
 
 1. **Use Exceptions Over Error Codes**: Exceptions keep code clean; error codes can obscure logic.
 
@@ -415,9 +410,8 @@ robust code.
 
 ### 8. Boundaries
 
-Managing boundaries in software involves carefully integrating and testing third-party or external code.
-By abstracting these interactions and preparing for future changes, we maintain cleaner and more robust
-systems.
+Managing boundaries in software involves carefully integrating and testing third-party or external code. By abstracting these interactions and preparing for
+future changes, we maintain cleaner and more robust systems.
 
 1. **Third-Party Code Abstraction**: Control access to properties and methods.
 
@@ -439,9 +433,8 @@ systems.
 
 ### 9. Unit Tests
 
-Unit tests are fundamental in software development. They should be clean, well-structured, and adhere to
-principles that ensure their effectiveness and maintainability. This approach leads to more robust,
-reliable, and easily adaptable software.
+Unit tests are fundamental in software development. They should be clean, well-structured, and adhere to principles that ensure their effectiveness and
+maintainability. This approach leads to more robust, reliable, and easily adaptable software.
 
 1. **Clean Tests**: As vital as production code, should evolve with it.
 
@@ -468,26 +461,23 @@ reliable, and easily adaptable software.
 
 ### 10. Classes
 
-Classes are foundational in object-oriented programming. Adhering to SOLID principles and organizing
-classes properly leads to cleaner, more maintainable, and scalable code.
+Classes are foundational in object-oriented programming. Adhering to SOLID principles and organizing classes properly leads to cleaner, more maintainable, and
+scalable code.
 
 1. **SOLID Principles**: Guidelines for OO design.
 
     - **S**ingle Responsibility: One reason to change.
     - **O**pen-Closed: Open for extension, closed for modification.
     - **L**iskov Substitution: Subtypes must be substitutable for their base types.
-    - **I**nterface Segregation: Many client-specific interfaces are better than one general-purpose
-      interface.
+    - **I**nterface Segregation: Many client-specific interfaces are better than one general-purpose interface.
     - **D**ependency Inversion: Depend on abstractions, not concretions.
 
 2. **Class Organization**: Proper structuring for readability and maintainability.
-    - Public static constants first, then private static variables, followed by private instance
-      variables.
+    - Public static constants first, then private static variables, followed by private instance variables.
 
 ### 11. Systems
 
-Effective system design, such as using dependency injection, simplifies complexity management, improving
-maintainability and scalability of software systems.
+Effective system design, such as using dependency injection, simplifies complexity management, improving maintainability and scalability of software systems.
 
 1. **Separation of Construction and Use**: Differentiate system startup from runtime logic.
 2. **Dependency Injection**: Enhances flexibility and testability, reduces hard-coded dependencies.
@@ -500,6 +490,7 @@ maintainability and scalability of software systems.
 // 🚫 Hard-coded dependency
 import Game from './Game.js'
 const game = new Game()
+
 // Game.js
 import DictionaryManager from './DictionaryManager.js'
 class Game {
@@ -513,6 +504,7 @@ import Game from './Game.js'
 import DictionaryManager from './DictionaryManager.js'
 const dictionaryManager = new DictionaryManager()
 const game = new Game(dictionaryManager)
+
 // Game.js
 class Game {
 	constructor(dictionaryManager) {
@@ -523,8 +515,8 @@ class Game {
 
 ### 12. Emergence
 
-Emergent design, guided by these principles, fosters a clean, understandable, and maintainable codebase.
-It emphasizes the significance of testing in achieving a well-structured and efficient system.
+Emergent design, guided by these principles, fosters a clean, understandable, and maintainable codebase. It emphasizes the significance of testing in achieving
+a well-structured and efficient system.
 
 1. **Runs All the Tests**: Ensures the system is testable and verifiable.
 2. **No Duplication**: Eliminate redundancy for simpler, more maintainable code.
@@ -540,27 +532,25 @@ It emphasizes the significance of testing in achieving a well-structured and eff
 
 ### 13. Concurrency
 
-Concurrency is challenging but crucial for performance and structure. It requires careful planning,
-testing, and adherence to principles like limited data scope and single responsibility.
+Concurrency is challenging but crucial for performance and structure. It requires careful planning, testing, and adherence to principles like limited data scope
+and single responsibility.
 
 -   **Decoupling Execution from Timing**: Allows operations without functional order dependency.
--   **Concurrency vs. Single-threaded**: Multi-threading improves structure and performance but is
-    complex.
+-   **Concurrency vs. Single-threaded**: Multi-threading improves structure and performance but is complex.
 -   **Key Techniques**:
     -   **Limit Scope of Data**: Use `synchronized` in Java for critical sections.
     -   **Use Copies of Data**: Minimize shared data to avoid conflicts.
     -   **Independent Threads**: Threads should not share data; each operates independently.
 
-## Best Practices in Concurrency
+### Best Practices in Concurrency
 
 1. **Follow Single Responsibility Principle**: Keep concurrency-related code separate and focused.
-2. **Know Your Library**: Understand thread-safe collections, executor framework, and nonblocking
-   solutions.
+2. **Know Your Library**: Understand thread-safe collections, executor framework, and nonblocking solutions.
 3. **Avoid Dependencies Between Synchronized Methods**: Prevents subtle bugs in concurrent code.
 4. **Keep Synchronized Sections Small**: Lock only what's necessary and avoid nested locks.
 5. **Graceful Shutdown**: Plan and test for proper shutdown to avoid deadlocks.
 
-## Testing Threaded Code
+### Testing Threaded Code
 
 -   **Frequent Testing**: Test under different configurations and loads.
 -   **Spurious Failures**: Treat them as potential threading issues.
@@ -568,27 +558,23 @@ testing, and adherence to principles like limited data scope and single responsi
 
 ### 14. Successive Refinement
 
-Successive refinement is about maintaining code quality through continuous, incremental improvements.
-This approach ensures the longevity and maintainability of software.
+Successive refinement is about maintaining code quality through continuous, incremental improvements. This approach ensures the longevity and maintainability of
+software.
 
 -   **Avoiding Code Rot**: Continuous improvement prevents code degradation.
--   **Cost of Cleaning Bad Code**: It’s easier and less expensive to maintain cleanliness than to clean
-    up a mess.
+-   **Cost of Cleaning Bad Code**: It’s easier and less expensive to maintain cleanliness than to clean up a mess.
 -   **Refactoring**: Regularly refining and improving code quality.
 
-## Case Study: Command-Line Argument Parser (`Args`)
+### Case Study: Command-Line Argument Parser (`Args`)
 
 -   **Initial Development**: `Args` began as a simple tool but faced scalability issues.
 -   **Refinement Process**: The module was refactored and cleaned for better functionality.
 
-## Key Takeaways
+### Key Takeaways
 
-1. **Continuous Improvement**: Keep code clean from the start; frequent small refinements are more
-   manageable.
-2. **Addressing Problems Promptly**: Clean up messes as soon as they're made to avoid complex
-   dependencies and rot.
-3. **Professional Responsibility**: Maintaining clean code is a crucial aspect of professional software
-   development.
+1. **Continuous Improvement**: Keep code clean from the start; frequent small refinements are more manageable.
+2. **Addressing Problems Promptly**: Clean up messes as soon as they're made to avoid complex dependencies and rot.
+3. **Professional Responsibility**: Maintaining clean code is a crucial aspect of professional software development.
 
 ### 15. JUnit Internals
 
@@ -598,7 +584,7 @@ Understanding the internals of JUnit, a popular Java testing framework.
     -   Essential for creating effective unit tests in Java.
     -   Encourages writing clean, maintainable, and testable code.
 
-## 16. Refactoring SerialDate
+### 16. Refactoring SerialDate
 
 Refactoring an existing code base to improve its structure and readability.
 
@@ -606,7 +592,7 @@ Refactoring an existing code base to improve its structure and readability.
     -   Emphasizes the importance of clean code in maintaining and extending existing code.
     -   Shows how to transform a complex code base into a more manageable and understandable format.
 
-## 17. Smells and Heuristics
+### 17. Smells and Heuristics
 
 Identifying 'code smells' and applying heuristics for cleaner code.
 
@@ -614,10 +600,8 @@ Identifying 'code smells' and applying heuristics for cleaner code.
     -   Discusses common pitfalls in coding and how to avoid them.
     -   Offers practical advice for improving code quality and maintainability.
 
-## Conclusion
+### Conclusion
 
-"Clean Code" is more than a book; it's a philosophy. It's about taking pride in craftsmanship, with a
-relentless focus on creating code that is elegant, efficient, and understandable. As Uncle Bob puts it,
-there is no excuse for not doing your best. Embrace these principles, and you'll not only become a better
-programmer but also contribute to a more efficient, enjoyable, and sustainable software development
-environment.
+"Clean Code" is more than a book; it's a philosophy. It's about taking pride in craftsmanship, with a relentless focus on creating code that is elegant,
+efficient, and understandable. As Uncle Bob puts it, there is no excuse for not doing your best. Embrace these principles, and you'll not only become a better
+programmer but also contribute to a more efficient, enjoyable, and sustainable software development environment.
