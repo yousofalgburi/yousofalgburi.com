@@ -14,7 +14,7 @@ function BlogLink({ slug, name }) {
 		<div className='group'>
 			<a
 				href={`/blog/${slug}`}
-				className='border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 rounded flex items-center justify-between px-3 py-4 w-full'
+				className='border border-neutral-200 dark:border-zinc-700 bg-neutral-50 dark:bg-zinc-800 rounded flex items-center justify-between px-3 py-4 w-full'
 			>
 				<div className='flex flex-col'>
 					<p className='font-medium text-neutral-900 dark:text-neutral-100'>{name}</p>
@@ -33,21 +33,20 @@ export default function Page() {
 			<h1 className='font-medium text-2xl mb-8 tracking-tighter'>Hello, I'm Yousof.</h1>
 
 			<p className='prose prose-neutral dark:prose-invert'>
-				A full stack developer and creative. I currently work as a full stack developer at Call Box where I
-				build exciting projects for the web. I'm also a freelancer and consultant, helping businesses with great
-				software. I also build and sell apps from scratch, currently building GamesLink.
+				A full stack developer and creative. I currently work as a full stack developer at Call Box where I build
+				exciting projects for the web. I'm also a freelancer and consultant, helping businesses with great software. I
+				also build and sell apps from scratch, currently building GamesLink.
 			</p>
 
 			<div className='prose prose-neutral dark:prose-invert'>
 				<p>
-					I create content on YouTube, Twitter, and my blog. I also read books often and write about them on
-					my blog.
+					I create content on YouTube, Twitter, and my blog. I also read books often and write about them on my blog.
 				</p>
 			</div>
 
 			<div className='my-8 flex flex-col space-y-4 w-full'>
-				<BlogLink name='Clean Code: A comprehensive book review' slug='clean-code-review' />
-				<BlogLink name='How to effectively use LeetCode' slug='how-to-effectively-use-leetcode' />
+				<BlogLink name='Clean Code: A Comprehensive Book Summary' slug='clean-code-review' />
+				<BlogLink name='How to Effectively Use LeetCode' slug='how-to-effectively-use-leetcode' />
 			</div>
 
 			<ul className='flex flex-col md:flex-row mt-8 space-x-0 md:space-x-4 space-y-2 md:space-y-0 font-sm text-neutral-600 dark:text-neutral-300'>

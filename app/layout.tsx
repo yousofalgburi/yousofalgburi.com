@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 	metadataBase: new URL('https://yousofalgburi.com'),
 	title: {
 		default: 'Yousof Algburi',
-		template: '%s | Yousof Algburi',
+		template: '%s | Yousof Algburi'
 	},
 	description: 'Developer and a creative.',
 	openGraph: {
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 		url: 'https://yousofalgburi.com',
 		siteName: 'Yousof Algburi',
 		locale: 'en_US',
-		type: 'website',
+		type: 'website'
 	},
 	robots: {
 		index: true,
@@ -31,17 +31,17 @@ export const metadata: Metadata = {
 			follow: true,
 			'max-video-preview': -1,
 			'max-image-preview': 'large',
-			'max-snippet': -1,
-		},
+			'max-snippet': -1
+		}
 	},
 	twitter: {
 		title: 'Yousof Algburi',
-		card: 'summary_large_image',
+		card: 'summary_large_image'
 	},
 	verification: {
 		google: 'eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw',
-		yandex: '14d2e73487fa6c71',
-	},
+		yandex: '14d2e73487fa6c71'
+	}
 }
 
 const cx = (...classes) => classes.filter(Boolean).join(' ')
@@ -50,11 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<html
 			lang='en'
-			className={cx(
-				'text-black bg-white dark:text-white dark:bg-[#111010]',
-				GeistSans.variable,
-				GeistMono.variable
-			)}
+			className={cx('text-black bg-white dark:text-white dark:bg-zinc-950', GeistSans.variable, GeistMono.variable)}
 		>
 			<head>
 				<SandpackCSS />
