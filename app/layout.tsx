@@ -50,7 +50,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<html
 			lang='en'
-			className={cx('text-black bg-white dark:text-white dark:bg-zinc-950', GeistSans.variable, GeistMono.variable)}
+			className={cx(
+				'text-black bg-white dark:text-white dark:bg-zinc-950',
+				GeistSans.variable,
+				GeistMono.variable
+			)}
 		>
 			<head>
 				<SandpackCSS />
