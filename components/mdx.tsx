@@ -6,11 +6,11 @@ import { highlight } from 'sugar-high'
 import { LiveCode } from './sandpack'
 import { TweetComponent } from './tweet'
 
-function Table({ data }) {
-    let headers = data.headers.map((header, index) => <th key={index}>{header}</th>)
-    let rows = data.rows.map((row, index) => (
+function Table({ data }: { data: any }) {
+    let headers = data.headers.map((header: any, index: any) => <th key={index}>{header}</th>)
+    let rows = data.rows.map((row: any, index: any) => (
         <tr key={index}>
-            {row.map((cell, cellIndex) => (
+            {row.map((cell: any, cellIndex: any) => (
                 <td key={cellIndex}>{cell}</td>
             ))}
         </tr>
@@ -26,7 +26,7 @@ function Table({ data }) {
     )
 }
 
-function CustomLink(props) {
+function CustomLink(props: any) {
     let href = props.href
 
     if (href.startsWith('/')) {
@@ -44,11 +44,11 @@ function CustomLink(props) {
     return <a target="_blank" rel="noopener noreferrer" {...props} />
 }
 
-function RoundedImage(props) {
+function RoundedImage(props: any) {
     return <Image alt={props.alt} className="rounded-lg" {...props} />
 }
 
-function Callout(props) {
+function Callout(props: any) {
     return (
         <div className="mb-8 flex items-center rounded border border-neutral-200 bg-neutral-50 p-1 px-4 py-3 text-sm text-neutral-900 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100">
             <div className="mr-4 flex w-4 items-center">{props.emoji}</div>
@@ -57,12 +57,12 @@ function Callout(props) {
     )
 }
 
-function ProsCard({ title, pros }) {
+function ProsCard({ title, pros }: any) {
     return (
         <div className="my-4 w-full rounded-xl border border-emerald-200 bg-neutral-50 p-6 dark:border-emerald-900 dark:bg-neutral-900">
             <span>{`You might use ${title} if...`}</span>
             <div className="mt-4">
-                {pros.map((pro) => (
+                {pros.map((pro: any) => (
                     <div key={pro} className="mb-2 flex items-baseline font-medium">
                         <div className="mr-2 h-4 w-4">
                             <svg className="h-4 w-4 text-emerald-500" viewBox="0 0 24 24">
@@ -86,12 +86,12 @@ function ProsCard({ title, pros }) {
     )
 }
 
-function ConsCard({ title, cons }) {
+function ConsCard({ title, cons }: any) {
     return (
         <div className="my-6 w-full rounded-xl border border-red-200 bg-neutral-50 p-6 dark:border-red-900 dark:bg-neutral-900">
             <span>{`You might not use ${title} if...`}</span>
             <div className="mt-4">
-                {cons.map((con) => (
+                {cons.map((con: any) => (
                     <div key={con} className="mb-2 flex items-baseline font-medium">
                         <div className="mr-2 h-4 w-4">
                             <svg
@@ -111,12 +111,12 @@ function ConsCard({ title, cons }) {
     )
 }
 
-function Code({ children, ...props }) {
+function Code({ children, ...props }: any) {
     let codeHTML = highlight(children)
     return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />
 }
 
-function slugify(str) {
+function slugify(str: any) {
     return str
         .toString()
         .toLowerCase()
@@ -127,9 +127,9 @@ function slugify(str) {
         .replace(/\-\-+/g, '-') // Replace multiple - with single -
 }
 
-function createHeading(level) {
+function createHeading(level: any) {
     // eslint-disable-next-line react/display-name
-    return ({ children }) => {
+    return ({ children }: any) => {
         let slug = slugify(children)
         return React.createElement(
             `h${level}`,
@@ -164,6 +164,6 @@ let components = {
     LiveCode,
 }
 
-export function CustomMDX(props) {
+export function CustomMDX(props: any) {
     return <MDXRemote {...props} components={{ ...components, ...(props.components || {}) }} />
 }

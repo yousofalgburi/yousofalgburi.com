@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 import { unstable_noStore as noStore } from 'next/cache'
 import { notFound } from 'next/navigation'
 
-export async function generateMetadata({ params }): Promise<Metadata | undefined> {
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata | undefined> {
     let post = getBlogPosts().find((post) => post.slug === params.slug)
     if (!post) {
         return
@@ -70,7 +70,7 @@ function formatDate(date: string) {
     return `${fullDate} (${formattedDate})`
 }
 
-export default function Page({ params }) {
+export default function Page({ params }: { params: { slug: string } }) {
     let post = getBlogPosts().find((post) => post.slug === params.slug)
 
     if (!post) {
