@@ -7,7 +7,7 @@ import { LayoutGroup } from 'framer-motion'
 import { Suspense } from 'react'
 import NavItem from './NavItem'
 import { ModeToggle } from './ModeToggle'
-import { Icons } from './Icons'
+import { Icons } from '@/components/Icons'
 
 const navItems = {
     '/': {
