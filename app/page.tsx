@@ -1,6 +1,3 @@
-import Link from 'next/link'
-import { Icons } from '@/components/Icons'
-
 export default function Page() {
     return (
         <section>
