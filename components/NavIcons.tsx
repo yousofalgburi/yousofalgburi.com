@@ -1,6 +1,6 @@
 import { JSX, SVGProps } from 'react'
 
-export const Icons = {
+export const NavIcons = {
     BriefcaseIcon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
         <svg
             {...props}
