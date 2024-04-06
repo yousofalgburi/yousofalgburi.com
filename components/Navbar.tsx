@@ -3,24 +3,28 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
-import { Icons } from '@/components/icons'
 import { LayoutGroup } from 'framer-motion'
 import { Suspense } from 'react'
 import NavItem from './NavItem'
 import { ModeToggle } from './ModeToggle'
+import { Icons } from './Icons'
 
 const navItems = {
     '/': {
-        name: 'home',
+        name: 'Home',
+        icon: <Icons.UserIcon className="h-6 w-6" />,
     },
     '/work': {
-        name: 'work',
+        name: 'Work',
+        icon: <Icons.BriefcaseIcon className="h-6 w-6" />,
     },
     '/blog': {
-        name: 'blog',
+        name: 'Blog',
+        icon: <Icons.PencilIcon className="h-6 w-6" />,
     },
     '/projects': {
-        name: 'projects',
+        name: 'Projects',
+        icon: <Icons.FolderIcon className="h-6 w-6" />,
     },
 }
 
@@ -53,8 +57,8 @@ export default function Navbar() {
                             >
                                 <div className="flex flex-col space-x-0 pr-10">
                                     <Suspense fallback={null}>
-                                        {Object.entries(navItems).map(([path, { name }]) => {
-                                            return <NavItem key={path} path={path} name={name} />
+                                        {Object.entries(navItems).map(([path, { name, icon }]) => {
+                                            return <NavItem key={path} path={path} name={name} icon={icon} />
                                         })}
                                     </Suspense>
                                 </div>

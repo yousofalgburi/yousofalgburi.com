@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
 
-export default function NavItem({ path, name }: { path: string; name: string }) {
+export default function NavItem({ path, name, icon }: { path: string; name: string; icon?: JSX.Element }) {
     let pathname = usePathname() || '/'
     if (pathname.includes('/blog/')) {
         pathname = '/blog'
@@ -21,7 +21,10 @@ export default function NavItem({ path, name }: { path: string; name: string }) 
             })}
         >
             <span className="relative px-2 py-1">
-                {name}
+                <div className="flex gap-2">
+                    {icon}
+                    {name}
+                </div>
                 {path === pathname ? (
                     <motion.div
                         className="absolute inset-0 top-7 z-[-1] mx-2 h-[1px] bg-neutral-200 dark:bg-neutral-500"
