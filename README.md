@@ -1,1 +1,0 @@
-Thanks to Leerob.io.
