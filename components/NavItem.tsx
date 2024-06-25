@@ -1,42 +1,52 @@
-'use client'
-
-import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
+import { cn } from '@/lib/utils'
 
-export default function NavItem({ path, name, icon }: { path: string; name: string; icon?: JSX.Element }) {
-    let pathname = usePathname() || '/'
-    if (pathname.includes('/blog/')) {
-        pathname = '/blog'
-    }
-    const isActive = path === pathname
+export default function NavItem({ path, name, icon, nonClickable }: { path: string; name: string; icon: React.ReactNode; nonClickable?: boolean }) {
+	const pathname = usePathname()
+	const isActive = path === pathname
 
-    return (
-        <Link
-            key={path}
-            href={path}
-            className={clsx('flex align-middle', {
-                'text-neutral-500': !isActive,
-            })}
-        >
-            <span className="relative px-2 py-1">
-                <div className="flex gap-2">
-                    {icon}
-                    {name}
-                </div>
-                {path === pathname ? (
-                    <motion.div
-                        className="absolute inset-0 top-7 z-[-1] mx-2 h-[1px] bg-neutral-200 dark:bg-neutral-500"
-                        layoutId="sidebar"
-                        transition={{
-                            type: 'spring',
-                            stiffness: 350,
-                            damping: 30,
-                        }}
-                    />
-                ) : null}
-            </span>
-        </Link>
-    )
+	const content = (
+		<>
+			{icon}
+			<span className='ml-2'>{name}</span>
+		</>
+	)
+
+	return (
+		<div className='relative'>
+			{nonClickable ? (
+				<div
+					className={cn(
+						'flex items-center py-3 text-sm font-medium text-neutral-500',
+						isActive && 'text-neutral-800 dark:text-neutral-200',
+					)}
+				>
+					{content}
+				</div>
+			) : (
+				<Link
+					href={path}
+					className={cn(
+						'flex items-center py-3 text-sm font-medium text-neutral-500 hover:text-neutral-800 dark:hover:text-neutral-200',
+						isActive && 'text-neutral-800 dark:text-neutral-200',
+					)}
+				>
+					{content}
+				</Link>
+			)}
+			{isActive && (
+				<motion.div
+					className='absolute inset-0 z-[-1] rounded-md bg-neutral-100 dark:bg-neutral-800'
+					layoutId='sidebar'
+					transition={{
+						type: 'spring',
+						stiffness: 350,
+						damping: 30,
+					}}
+				/>
+			)}
+		</div>
+	)
 }
