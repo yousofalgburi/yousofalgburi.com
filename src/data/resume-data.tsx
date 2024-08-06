@@ -67,7 +67,7 @@ export const RESUME_DATA = {
 		},
 		{
 			company: 'Freelance',
-			link: 'https://www.callbox.com',
+			link: null,
 			badges: ['Remote'],
 			title: 'Software Engineer',
 			logo: null,
