@@ -49,7 +49,7 @@ export const RESUME_DATA = {
 			badges: ['Remote'],
 			title: 'Software Engineer',
 			logo: null,
-			start: 'June 2023',
+			start: 'July 2023',
 			end: 'July 2024',
 			description:
 				'Architected and developed scalable distributed microservices using TypeScript, Node.js, Docker, and AWS. Engineered a distributed SIP system, serverless conversation API, and robust caching infrastructure serving multiple distributed systems.',
@@ -61,7 +61,7 @@ export const RESUME_DATA = {
 			title: 'Junior Developer',
 			logo: null,
 			start: 'May 2022',
-			end: 'June 2023',
+			end: 'July 2023',
 			description:
 				'Developed highly performant APIs and interactive web applications using TypeScript, AWS, Node.js, Express.js, React.js, Vue.js, jQuery, PostgreSQL, and MSSQL. Transformed the main product dashboard and engineered a high-performance API for event management.',
 		},
