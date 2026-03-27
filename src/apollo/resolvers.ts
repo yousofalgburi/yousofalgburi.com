@@ -6,7 +6,6 @@ import { RESUME_DATA } from '../data/resume-data'
 export class MeResolver {
 	@Query(() => Me)
 	me(): Me {
-		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-		return RESUME_DATA as any
+		return RESUME_DATA as Me
 	}
 }
